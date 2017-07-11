@@ -2,8 +2,6 @@
 
 ### Project 1
 
-**Day 1**
-
 For my game, I'll be building Whack-a-Mole. This will require HTML, CSS, and JavaScript. I'm choosing Vanilla JS over jQuery not only to avoid downloading the jQuery library for this game but also to challenge myself to better understand JavaScript since jQuery currently seems easier. 
 
 The game page will include the following:
@@ -30,6 +28,9 @@ Functionality requirements:
 
 Trello link:
 **[Whack-a-Mole Game on Trello](https://trello.com/b/mq0ZdZnC/whack-a-mole-game)**
+
+Whack-a-Mole Wireframe
+<img src="whack-a-mole-wireframe.jpeg">
 
 
 ### Overview
