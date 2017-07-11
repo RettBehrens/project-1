@@ -30,7 +30,7 @@ Trello link:
 **[Whack-a-Mole Game on Trello](https://trello.com/b/mq0ZdZnC/whack-a-mole-game)**
 
 Whack-a-Mole Wireframe
-<img src="whack-a-mole-wireframe.jpeg">
+<img src="assets/whack-a-mole-wireframe.jpeg">
 
 
 ### Overview
