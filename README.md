@@ -28,6 +28,10 @@ Functionality requirements:
 * compare scores after player 2 plays
 * declares winner based on which score is higher
 
+Trello link:
+**[Whack-a-Mole Game on Trello](https://trello.com/b/mq0ZdZnC/whack-a-mole-game)**
+
+
 ### Overview
 
 Let's start out with something fun - **a game!**
