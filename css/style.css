@@ -10,7 +10,7 @@
 #header-div {
 	height: 15vh;
 	width: 100%;
-	background-color: blue;
+	background-color: #9dbae8;
 }
 
 h1 {
@@ -20,7 +20,7 @@ h1 {
 #content-div {
 	height: 70vh;
 	width: 100%;
-	background-color: green;
+	background-color: #aee8a7;
 }
 
 #description-div {
@@ -45,6 +45,23 @@ h1 {
 	background-color: white;
 }
 
+/*#m-h-1 {
+	display: block;
+	margin: 0 auto;
+	vertical-align: center;
+	height: 50px;
+	width: 50px;
+	background-color: black;
+}*/
+
+.mh {
+	display: block;
+	margin: 0 auto;
+	height: 30%;
+	width: 30%;
+	background-color: black;
+}
+
 #control-panel-div {
 	display: inline-block;
 	height: 50vh;
@@ -56,24 +73,79 @@ h1 {
 	float: right;
 }
 
+button {
+	background-color: grey;
+	border: none;
+	width: 40%;
+	margin: 4%;
+	padding-top: 4%;
+	padding-bottom: 4%;
+}
+
+#timer {
+	background-color: grey;
+	width: 30%;
+	margin: 0 auto;
+	margin-bottom: 4%;
+	padding-top: 4%;
+	padding-bottom: 4%;
+}
+
+#declaration {
+	background-color: grey;
+	width: 60%;
+	margin: 0 auto;
+	margin-bottom: 4%;
+	padding-top: 4%;
+	padding-bottom: 4%;
+}
+
+#player1 {
+	display: inline-block;
+	width: 30%;
+	background-color: grey;
+	padding-top: 4%;
+	padding-bottom: 4%;
+	margin-right: : 15%;
+}
+
+#player2 {
+	display: inline-block;
+	width: 30%;
+	background-color: grey;
+	padding-top: 4%;
+	padding-bottom: 4%;
+	margin-left: 15%;
+}
+
 .scores {
 	display: block;
-	background-color: yellow;
 	vertical-align: center;
+	margin-top: 3%
 }
 
 #p-1-score {
 	display: inline-block;
 	background-color: grey;
+	width: 20%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	margin-left: 17%;
+	float: left;
 }
 
 #p-2-score {
 	display: inline-block;
 	background-color: grey;
+	width: 20%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	margin-right: 17%;
+	float: right;
 }
 
 #footer-div {
 	height: 15vh;
 	width: 100%;
-	background-color: red;
+	background-color: #e8a7a7;
 }
