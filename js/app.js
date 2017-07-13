@@ -12,7 +12,7 @@ window.onload = function() {
 function makeReady() {
 	console.log("play ready!");
 	document.getElementById("play").onclick = function() {
-		startGame();
+		ready();
 	};
 	console.log("reset ready!");
 	document.getElementById("reset").onclick = function() {
@@ -20,14 +20,47 @@ function makeReady() {
 	};
 }
 
+function ready() {
+	setTimeout(countdownThree, 1000);
+	document.getElementById("timer").innerHTML = "READY...";
+	console.log("ready.....");
+}
+
+function countdownThree() {
+	setTimeout(countdownTwo, 1000);
+	document.getElementById("timer").innerHTML = "THREE...";
+	console.log("Three.....");
+}
+
+function countdownTwo() {
+	setTimeout(countdownOne, 1000);
+	document.getElementById("timer").innerHTML = "TWO...";
+	console.log("Two.....");
+}
+
+function countdownOne() {
+	setTimeout(startGame, 1000);
+	document.getElementById("timer").innerHTML = "ONE...";
+	console.log("One.....");
+}
+
 //startGame() creates gameboard divs with id and class
 function startGame() {
 	console.log("start game works");
+	document.getElementById("timer").innerHTML = "GO!";
+	
 	var gameboardGrid = document.createElement("div");
 	gameboardGrid.id = "ggId";
 	document.getElementById("gameboard-div").appendChild(gameboardGrid);
 	document.getElementById("ggId").classList.add("ggClass");
 	console.log("gg created");
+
+	var timeLeft = 10;
+	var gameTimer = setInterval(function(){
+		document.getElementById("timer").innerHTML = timeLeft -= 1;
+  		if(timeLeft <= 0)
+    	clearInterval(gameTimer);
+	},1000);
 
 	//create a loop
 	//creat div element
@@ -43,12 +76,16 @@ function startGame() {
 	}
 
 	//defining outside of random number generator/repeater due to removeEventListener issue
+	var points = 0;
 	function doesThisWork() {
-		console.log("listener added");
+		console.log("click detected");
+		//needs an if-else statement dictating who gets points
+		document.getElementById("p-1-score").innerHTML = points += 1;
+		//document.getElementById("p-2-score").innerHTML = points += 1;
 	}
 
 	repeatMole();
-	
+
 	//begins repeating a random number assigned to each mole hole
 	function repeatMole() {
 		function activateMole() {
@@ -66,10 +103,10 @@ function startGame() {
 				document.getElementById("mH"+ whichMoleHole).addEventListener("click", doesThisWork, true);
 			} else {
 				document.getElementById("mH"+ whichMoleHole).removeEventListener("click", doesThisWork, true);
-				console.log("listener removed");	
-			}
+				console.log("no clicky no more");	
+			} 
 		}
-		//function runs every quarter second
+		//function runs every quarter second, unless game timer has hit 10 seconds
 		setInterval(activateMole, 250);
 	}
 }
