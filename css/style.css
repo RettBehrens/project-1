@@ -45,21 +45,30 @@ h1 {
 	background-color: white;
 }
 
-/*#m-h-1 {
+.ggClass {
 	display: block;
 	margin: 0 auto;
-	vertical-align: center;
-	height: 50px;
-	width: 50px;
-	background-color: black;
-}*/
+	height: 100%;
+	width: 100%;
+	background-color: #f2e29d;
+}
 
 .mh {
-	display: block;
+	display: inline-block;
 	margin: 0 auto;
 	height: 30%;
 	width: 30%;
 	background-color: black;
+}
+
+.mole {
+	display: inline-block;
+	margin: 0 auto;
+	height: 30%;
+	width: 30%;
+	background-image: url(../assets/small-js-badge.png);
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 #control-panel-div {

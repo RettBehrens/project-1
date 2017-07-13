@@ -7,7 +7,7 @@ window.onload = function() {
 	makeReady();
 };
 
-//add click listeners to "play" and "reset" buttons
+//add click functions to "play" and "reset" buttons
 //when clicked, buttons call functions startGame() and wipeGame()
 function makeReady() {
 	console.log("play ready!");
@@ -20,16 +20,36 @@ function makeReady() {
 	};
 }
 
-//startGame() creates gameboard divs with attributes, then..
-//begins repeating a random number assigned to each mole hole..
-//when random number = mole hole id, mole appears..
+//startGame() creates gameboard divs with id and class
 function startGame() {
 	console.log("start game works");
-	var mH1 = document.createElement("div");
-	mH1.id = "m-h-1";
-	document.getElementById("gameboard-div").appendChild(mH1);
-	document.getElementById("m-h-1").classList.add("mh");
+	var gameboardGrid = document.createElement("div");
+	gameboardGrid.id = "ggId";
+	document.getElementById("gameboard-div").appendChild(gameboardGrid);
+	document.getElementById("ggId").classList.add("ggClass");
+	console.log("gg created");
+
+	//create a loop
+	//creat div element
+	//assign an id "" + i+1
+	//appendchild
+	//add class
+	for(var i=0; i<9; i++) {
+		var moleHoleNth = document.createElement("div");
+		moleHoleNth.id = "mH" + (i+1);
+		document.getElementById("ggId").appendChild(moleHoleNth);
+		moleHoleNth.classList.add("mh");
+		console.log("for loop worked!");
+	}
+
+	//defining outside of random number generator/repeater due to removeEventListener issue
+	function doesThisWork() {
+		console.log("listener added");
+	}
+
 	repeatMole();
+	
+	//begins repeating a random number assigned to each mole hole
 	function repeatMole() {
 		function activateMole() {
 			function whichMoleHole(min, max) {
@@ -37,32 +57,30 @@ function startGame() {
 	  			max = Math.floor(max);
 	  			return Math.floor(Math.random() * (max - min + 1)) + min;
 			}
-			var whichMoleHole = whichMoleHole(0,1);
-			if (whichMoleHole === 1) {
-				console.log("a mole! whack it!");
-				whichMoleHole = "";
-			} else if (whichMoleHole === 0) {
-				console.log("no mole...");
-				whichMoleHole = "";
+
+			//when random number = mole hole id, mole appears
+			var whichMoleHole = whichMoleHole(1,9);
+			document.getElementById("mH"+ whichMoleHole).classList.toggle("mole");
+			//add and remove click event listener to "mole" class
+			if (document.getElementById("mH"+ whichMoleHole).className === "mh mole") {
+				document.getElementById("mH"+ whichMoleHole).addEventListener("click", doesThisWork, true);
+			} else {
+				document.getElementById("mH"+ whichMoleHole).removeEventListener("click", doesThisWork, true);
+				console.log("listener removed");	
 			}
 		}
-		setInterval(activateMole, 500);
+		//function runs every quarter second
+		setInterval(activateMole, 250);
 	}
 }
 
 //wipeGame() resets gameboard to pre-play state and clears player scores
 function wipeGame() {
 	console.log("wipe game works");
-	var mH1 = document.getElementById("m-h-1");
-	mH1.parentNode.removeChild(mH1);
+	var gameboardGrid = document.getElementById("ggId");
+	ggId.parentNode.removeChild(ggId);
 	document.getElementById("p-1-score").innerHTML = "0";
 	document.getElementById("p-2-score").innerHTML = "0";
 }
 
-//var gameboard = document.getElementById("gameboard-div");
 
-//var mH1 = document.createElement("div");
-
-//var play = document.getElementById("play");
-
-//var reset = document.getElementById("reset");
