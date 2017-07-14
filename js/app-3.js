@@ -72,10 +72,11 @@ function countdownTwo() {
 }
 
 function countdownOne() {
-	setTimeout(startGame, 1000);
+	setTimeout(myFunction, 1000);
 	document.getElementById("timer").innerHTML = "ONE...";
 	console.log("One.....");
 	setTimeout(startGameTimer, 1000);
+	setTimeout(myFunction2, 11000);
 }
 
 //startGameTimer counts down to 0 from 10
@@ -98,16 +99,23 @@ function giveMePoints() {
 	//document.getElementById("p-2-score").innerHTML = points += 1;
 }
 
-function startGame() {
-//////////////////////
+var myVar;
+
+function myFunction() {
+	document.getElementById("timer").innerHTML = "GO!";
+	myVar = setInterval(activateMoles, 250);
 }
 
-function activateMole() {
+function myFunction2() {
+	clearInterval(myVar);
+}
+
+function activateMoles() {
 	//math.random function used for calling individual cells
 	function whichMoleHole(min, max) {
 		min = Math.ceil(min);
-  		max = Math.floor(max);
-  		return Math.floor(Math.random() * (max - min + 1)) + min;
+		  max = Math.floor(max);
+		  return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 
 	//uses random number generated above to toggle class on whichever cell was called
@@ -121,4 +129,6 @@ function activateMole() {
 		console.log("no clicky no more");	
 	}
 }
+
+
 
