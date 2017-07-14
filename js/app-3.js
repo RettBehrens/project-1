@@ -55,36 +55,37 @@ function wipeGame() {
 
 function ready() {
 	setTimeout(countdownThree, 1000);
-	document.getElementById("timer").innerHTML = "READY...";
+	document.getElementById("timer").innerHTML = "READY..";
 	console.log("ready.....");
 }
 
 function countdownThree() {
 	setTimeout(countdownTwo, 1000);
-	document.getElementById("timer").innerHTML = "THREE...";
+	document.getElementById("timer").innerHTML = "THREE..";
 	console.log("Three.....");
 }
 
 function countdownTwo() {
 	setTimeout(countdownOne, 1000);
-	document.getElementById("timer").innerHTML = "TWO...";
+	document.getElementById("timer").innerHTML = "TWO..";
 	console.log("Two.....");
 }
 
 function countdownOne() {
-	setTimeout(myFunction, 1000);
-	document.getElementById("timer").innerHTML = "ONE...";
+	setTimeout(mySetInterval, 1000);
+	document.getElementById("timer").innerHTML = "ONE..";
 	console.log("One.....");
 	setTimeout(startGameTimer, 1000);
-	setTimeout(myFunction2, 11000);
+	setTimeout(myClearInterval, 11000);
 }
 
 //startGameTimer counts down to 0 from 10
-var timeLeft = 10;
+var timeLeft = tl;
 function startGameTimer () {
+	var tl = 10;
 	var gameTimer = setInterval(function(){
-		document.getElementById("timer").innerHTML = timeLeft -= 1;
-  		if(timeLeft <= 0) {
+		document.getElementById("timer").innerHTML = tl -= 1;
+  		if(tl === 0) {
   			//clearInterval(activateMole);
 	    	clearInterval(gameTimer);
 	    }
@@ -95,19 +96,23 @@ var points = 0;
 function giveMePoints() {
 	console.log("points plus 1");
 	//needs an if-else statement dictating who gets points
+	if (timeLeft > 0) {
 	document.getElementById("p-1-score").innerHTML = points += 1;
+	} else {
+		document.getElementById("p-1-score").innerHTML = points;
+	}
 	//document.getElementById("p-2-score").innerHTML = points += 1;
 }
 
-var myVar;
+var myIntervalVariable;
 
-function myFunction() {
+function mySetInterval() {
 	document.getElementById("timer").innerHTML = "GO!";
-	myVar = setInterval(activateMoles, 250);
+	myIntervalVariable = setInterval(activateMoles, 2000);
 }
 
-function myFunction2() {
-	clearInterval(myVar);
+function myClearInterval() {
+	clearInterval(myIntervalVariable);
 }
 
 function activateMoles() {
@@ -124,11 +129,8 @@ function activateMoles() {
 	//add and remove click event listener to "mole" class
 	if (document.getElementById("mH"+ whichMoleHole).className === "mh mole") {
 		document.getElementById("mH"+ whichMoleHole).addEventListener("click", giveMePoints, true);
-	} else {
+	 } else {
 		document.getElementById("mH"+ whichMoleHole).removeEventListener("click", giveMePoints, true);
 		console.log("no clicky no more");	
 	}
 }
-
-
-
