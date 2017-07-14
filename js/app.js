@@ -58,8 +58,10 @@ function startGame() {
 	var timeLeft = 10;
 	var gameTimer = setInterval(function(){
 		document.getElementById("timer").innerHTML = timeLeft -= 1;
-  		if(timeLeft <= 0)
-    	clearInterval(gameTimer);
+  		if(timeLeft <= 0) {
+  			clearInterval(activateMole);
+	    	clearInterval(gameTimer);
+	    }
 	},1000);
 
 	//create a loop
@@ -85,27 +87,26 @@ function startGame() {
 	}
 
 	repeatMole();
+	function activateMole() {
+		function whichMoleHole(min, max) {
+			min = Math.ceil(min);
+  			max = Math.floor(max);
+  			return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
 
+		//when random number = mole hole id, mole appears
+		var whichMoleHole = whichMoleHole(1,9);
+		document.getElementById("mH"+ whichMoleHole).classList.toggle("mole");
+		//add and remove click event listener to "mole" class
+		if (document.getElementById("mH"+ whichMoleHole).className === "mh mole") {
+			document.getElementById("mH"+ whichMoleHole).addEventListener("click", doesThisWork, true);
+		} else {
+			document.getElementById("mH"+ whichMoleHole).removeEventListener("click", doesThisWork, true);
+			console.log("no clicky no more");	
+		} 
+	}
 	//begins repeating a random number assigned to each mole hole
 	function repeatMole() {
-		function activateMole() {
-			function whichMoleHole(min, max) {
-				min = Math.ceil(min);
-	  			max = Math.floor(max);
-	  			return Math.floor(Math.random() * (max - min + 1)) + min;
-			}
-
-			//when random number = mole hole id, mole appears
-			var whichMoleHole = whichMoleHole(1,9);
-			document.getElementById("mH"+ whichMoleHole).classList.toggle("mole");
-			//add and remove click event listener to "mole" class
-			if (document.getElementById("mH"+ whichMoleHole).className === "mh mole") {
-				document.getElementById("mH"+ whichMoleHole).addEventListener("click", doesThisWork, true);
-			} else {
-				document.getElementById("mH"+ whichMoleHole).removeEventListener("click", doesThisWork, true);
-				console.log("no clicky no more");	
-			} 
-		}
 		//function runs every quarter second, unless game timer has hit 10 seconds
 		setInterval(activateMole, 250);
 	}
@@ -116,8 +117,8 @@ function wipeGame() {
 	console.log("wipe game works");
 	var gameboardGrid = document.getElementById("ggId");
 	ggId.parentNode.removeChild(ggId);
-	document.getElementById("p-1-score").innerHTML = "0";
-	document.getElementById("p-2-score").innerHTML = "0";
+	//document.getElementById("p-1-score").innerHTML = "0";
+	//document.getElementById("p-2-score").innerHTML = "0";
 }
 
 

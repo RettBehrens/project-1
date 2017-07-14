@@ -83,6 +83,20 @@ h1 {
 	margin-right: 5px;
 }
 
+.whacked {
+	display: inline-block;
+	margin: 0 auto;
+	height: 105px;
+	width: 105px;
+	background-image: url(../assets/x-all-the-y.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	border-radius: 90px;
+	margin-top: 2px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
 #control-panel-div {
 	display: inline-block;
 	height: 50vh;
