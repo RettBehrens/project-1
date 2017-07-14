@@ -18,6 +18,28 @@ function makeReady() {
 	document.getElementById("reset").onclick = function() {
 		wipeGame();
 	};
+	makeGameboard();
+}
+
+function makeGameboard() {
+	var gameboardGrid = document.createElement("div");
+	gameboardGrid.id = "ggId";
+	document.getElementById("gameboard-div").appendChild(gameboardGrid);
+	document.getElementById("ggId").classList.add("ggClass");
+	console.log("gg created");
+
+	//create a loop
+	//create div element
+	//assign an id "" + i+1
+	//appendchild
+	//add class
+	for(var i=0; i<9; i++) {
+		var moleHoleNth = document.createElement("div");
+		moleHoleNth.id = "mH" + (i+1);
+		document.getElementById("ggId").appendChild(moleHoleNth);
+		moleHoleNth.classList.add("mh");
+		console.log("for loop worked!");
+	}
 }
 
 //wipeGame() resets gameboard to pre-play state and clears player scores
@@ -56,7 +78,7 @@ function countdownOne() {
 	setTimeout(startGameTimer, 1000);
 }
 
-//startGameTimer countsdown to 0 from 10
+//startGameTimer counts down to 0 from 10
 var timeLeft = 10;
 function startGameTimer () {
 	var gameTimer = setInterval(function(){
@@ -68,36 +90,6 @@ function startGameTimer () {
 	},1000);
 }
 
-//startGame() creates gameboard divs with id and class
-function startGame() {
-	console.log("start game works");
-	document.getElementById("timer").innerHTML = "GO!";
-	
-	var gameboardGrid = document.createElement("div");
-	gameboardGrid.id = "ggId";
-	document.getElementById("gameboard-div").appendChild(gameboardGrid);
-	document.getElementById("ggId").classList.add("ggClass");
-	console.log("gg created");
-
-	//create a loop
-	//creat div element
-	//assign an id "" + i+1
-	//appendchild
-	//add class
-	for(var i=0; i<9; i++) {
-		var moleHoleNth = document.createElement("div");
-		moleHoleNth.id = "mH" + (i+1);
-		document.getElementById("ggId").appendChild(moleHoleNth);
-		moleHoleNth.classList.add("mh");
-		console.log("for loop worked!");
-	}
-	startActivatingMoles();
-}
-
-function startActivatingMoles() {
-	setInterval(activateMole,100);
-}
-
 var points = 0;
 function giveMePoints() {
 	console.log("points plus 1");
@@ -106,10 +98,11 @@ function giveMePoints() {
 	//document.getElementById("p-2-score").innerHTML = points += 1;
 }
 
+function startGame() {
+//////////////////////
+}
+
 function activateMole() {
-	if (timeLeft === 0) {
-		clearInterval(activateMole);
-	}
 	//math.random function used for calling individual cells
 	function whichMoleHole(min, max) {
 		min = Math.ceil(min);
@@ -128,9 +121,4 @@ function activateMole() {
 		console.log("no clicky no more");	
 	}
 }
-
-
-
-
-
 
