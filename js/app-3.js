@@ -80,12 +80,12 @@ function countdownOne() {
 }
 
 //startGameTimer counts down to 0 from 10
-var timeLeft = tl;
+var timeLeft = 10;
 function startGameTimer () {
-	var tl = 10;
+	timeLeft = 10;
 	var gameTimer = setInterval(function(){
-		document.getElementById("timer").innerHTML = tl -= 1;
-  		if(tl === 0) {
+		document.getElementById("timer").innerHTML = timeLeft -= 1;
+  		if(timeLeft === 0) {
   			//clearInterval(activateMole);
 	    	clearInterval(gameTimer);
 	    }
