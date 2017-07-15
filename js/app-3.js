@@ -160,15 +160,18 @@ function activateMoles() {
 function whacked() {
 	if (timeLeft > 0) {
 		this.classList.remove("mole");
+		this.removeEventListener("click", giveMePoints, true);
 		this.classList.add("whacked");
-		setTimeout(resetWhacked, 500);
+		setTimeout(resetWhacked, 100);
 	}
-
-	function resetWhacked() {
-		this.classList.remove("whacked");
-	}
-
 }
+
+
+function resetWhacked() {
+	document.getElementsByClassName("whacked")[0].classList.remove("whacked");
+	//this.classList.remove("whacked");
+}
+
 
 
 
