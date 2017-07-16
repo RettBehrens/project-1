@@ -2,20 +2,31 @@
 <html>
 <head>
 	<title>WHACK-A-MOLE</title>
+	<!-- links to css normalize, to remove browser default styling -->
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<!-- links to css style, for specific element styling -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- links to google font "Press Start 2P" for arcade font styling -->
 	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 <body>
 	<div id="page-container">
+		<!-- header with game title -->
 		<div id="header-div">	
 			<header>
 				<h1>WHACK-A-MOLE</h1>
 			</header>
 		</div>
+		<!-- main content div, containing 3 divs: description, game, and control panel -->
 		<div id="content-div">
-			<div id="description-div">Description / Rules</div>
+			<div id="description-div">
+				<h2>The Game</h2>
+				<p>You've got 10 seconds to whack as many moles as you can.</p>
+				<p>Whack the most moles and you're the winner!</p>
+			</div>
+			<!-- where the JS magic happens -->
 			<div id="gameboard-div"></div>
+			<!-- for game stats -->
 			<div id="control-panel-div">
 				<button id="play">PLAY!</button>
 				<button id="reset">RESET</button>
@@ -29,6 +40,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- footer with dev links -->
 		<div id="footer-div">
 			<footer>
 				<div id="dev-links-div">
@@ -40,6 +52,7 @@
 		</div>	
 	</div>
 
+	<!-- where to find the JS magic to be executed -->
 	<script type="text/javascript" src="js/app-3.js"></script>
 
 </body>
