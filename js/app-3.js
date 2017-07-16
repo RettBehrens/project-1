@@ -12,6 +12,10 @@ window.onload = function() {
 function makeReady() {
 	console.log("play ready!");
 	document.getElementById("play").onclick = function() {
+		document.getElementById("play").disabled = true;
+
+		setTimeout(enablePlay, 14000);
+
 		ready();
 	};
 	console.log("reset ready!");
@@ -20,6 +24,10 @@ function makeReady() {
 		wipeGameBoard();
 	};
 	makeGameboard();
+}
+
+function enablePlay() {
+	document.getElementById("play").disabled = false;
 }
 
 function makeGameboard() {
@@ -53,24 +61,8 @@ function wipeGameTimer() {
 }
 
 function wipeGameBoard() {
-	document.getElementById("mH1").classList.remove("mole");
-	document.getElementById("mH2").classList.remove("mole");
-	document.getElementById("mH3").classList.remove("mole");
-	document.getElementById("mH4").classList.remove("mole");
-	document.getElementById("mH5").classList.remove("mole");
-	document.getElementById("mH6").classList.remove("mole");
-	document.getElementById("mH7").classList.remove("mole");
-	document.getElementById("mH8").classList.remove("mole");
-	document.getElementById("mH9").classList.remove("mole");
-	document.getElementById("mH1").removeEventListener("click", giveMePoints, true);
-	document.getElementById("mH2").removeEventListener("click", giveMePoints, true);
-	document.getElementById("mH3").removeEventListener("click", giveMePoints, true);
-	document.getElementById("mH4").removeEventListener("click", giveMePoints, true);
-	document.getElementById("mH5").removeEventListener("click", giveMePoints, true);
-	document.getElementById("mH6").removeEventListener("click", giveMePoints, true);
-	document.getElementById("mH7").removeEventListener("click", giveMePoints, true);
-	document.getElementById("mH8").removeEventListener("click", giveMePoints, true);
-	document.getElementById("mH9").removeEventListener("click", giveMePoints, true);
+	document.getElementById("p-1-score").innerHTML = 0;
+	document.getElementById("p-2-score").innerHTML = 0;
 }
 
 function ready() {
@@ -108,20 +100,37 @@ function startGameTimer () {
   		if(timeLeft === 0) {
   			//clearInterval(activateMole);
 	    	clearInterval(gameTimer);
+	    	document.getElementById("mH1").classList.remove("mole");
+			document.getElementById("mH2").classList.remove("mole");
+			document.getElementById("mH3").classList.remove("mole");
+			document.getElementById("mH4").classList.remove("mole");
+			document.getElementById("mH5").classList.remove("mole");
+			document.getElementById("mH6").classList.remove("mole");
+			document.getElementById("mH7").classList.remove("mole");
+			document.getElementById("mH8").classList.remove("mole");
+			document.getElementById("mH9").classList.remove("mole");
+			if (player === player1) {
+				player = player2;
+				points = 0;
+			} else if (player === player2) {
+				player = player1;
+				points = 0;
+			}
 	    }
 	},1000);
 }
 
 var points = 0;
+var player = player1;
 function giveMePoints() {
 	//needs an if-else statement dictating who gets points
-	if (timeLeft > 0) {
+	if (timeLeft > 0 && player === player1) {
 	document.getElementById("p-1-score").innerHTML = points += 1;
 	console.log("points plus 1");
-	} else {
-		document.getElementById("p-1-score").innerHTML = points;
+	} else if (timeLeft > 0 && player === player2) {
+	document.getElementById("p-2-score").innerHTML = points += 1;
+	console.log("points plus 1");
 	}
-	//document.getElementById("p-2-score").innerHTML = points += 1;
 }
 
 var myIntervalVariable;
@@ -162,7 +171,7 @@ function whacked() {
 		this.classList.remove("mole");
 		this.removeEventListener("click", giveMePoints, true);
 		this.classList.add("whacked");
-		setTimeout(resetWhacked, 100);
+		setTimeout(resetWhacked, 250);
 	}
 }
 
