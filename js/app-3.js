@@ -128,9 +128,11 @@ function startGameTimer () {
 			if (player === player1) {
 				player = player2;
 				points = 0;
+				document.getElementById("declaration").innerHTML = "Player 2 Turn";
 			} else if (player === player2) {
-				player = player1;
-				points = 0;
+				//player = player1;
+				//points = 0;
+				announceWinner();
 			}
 	    }
 	},1000);
@@ -195,6 +197,16 @@ function resetWhacked() {
 	document.getElementsByClassName("whacked")[0].classList.remove("whacked");
 }
 
-
+function announceWinner() {
+	if (document.getElementById("p-1-score").innerHTML > document.getElementById("p-2-score").innerHTML) {
+		document.getElementById("declaration").innerHTML = "Player 1 Wins!";
+		//alert("Player 1 Wins!");
+	} else if (document.getElementById("p-2-score").innerHTML > document.getElementById("p-1-score").innerHTML) {
+		document.getElementById("declaration").innerHTML = "Player 2 Wins!";
+		//alert("Player 2 Wins!");
+	} else if (document.getElementById("p-1-score").innerHTML === document.getElementById("p-2-score").innerHTML) {
+		document.getElementById("declaration").innerHTML = "It's A Tie!";
+	}
+}
 
 
