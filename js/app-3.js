@@ -13,9 +13,7 @@ function makeReady() {
 	console.log("play ready!");
 	document.getElementById("play").onclick = function() {
 		document.getElementById("play").disabled = true;
-
 		setTimeout(enablePlay, 14000);
-
 		ready();
 	};
 	console.log("reset ready!");
@@ -109,6 +107,24 @@ function startGameTimer () {
 			document.getElementById("mH7").classList.remove("mole");
 			document.getElementById("mH8").classList.remove("mole");
 			document.getElementById("mH9").classList.remove("mole");
+			document.getElementById("mH1").removeEventListener("click", giveMePoints, true);
+			document.getElementById("mH2").removeEventListener("click", giveMePoints, true);
+			document.getElementById("mH3").removeEventListener("click", giveMePoints, true);
+			document.getElementById("mH4").removeEventListener("click", giveMePoints, true);
+			document.getElementById("mH5").removeEventListener("click", giveMePoints, true);
+			document.getElementById("mH6").removeEventListener("click", giveMePoints, true);
+			document.getElementById("mH7").removeEventListener("click", giveMePoints, true);
+			document.getElementById("mH8").removeEventListener("click", giveMePoints, true);
+			document.getElementById("mH9").removeEventListener("click", giveMePoints, true);
+			document.getElementById("mH1").removeEventListener("click", whacked, true);
+			document.getElementById("mH2").removeEventListener("click", whacked, true);
+			document.getElementById("mH3").removeEventListener("click", whacked, true);
+			document.getElementById("mH4").removeEventListener("click", whacked, true);
+			document.getElementById("mH5").removeEventListener("click", whacked, true);
+			document.getElementById("mH6").removeEventListener("click", whacked, true);
+			document.getElementById("mH7").removeEventListener("click", whacked, true);
+			document.getElementById("mH8").removeEventListener("click", whacked, true);
+			document.getElementById("mH9").removeEventListener("click", whacked, true);
 			if (player === player1) {
 				player = player2;
 				points = 0;
@@ -126,10 +142,10 @@ function giveMePoints() {
 	//needs an if-else statement dictating who gets points
 	if (timeLeft > 0 && player === player1) {
 	document.getElementById("p-1-score").innerHTML = points += 1;
-	console.log("points plus 1");
+	console.log("p1 points plus 1");
 	} else if (timeLeft > 0 && player === player2) {
 	document.getElementById("p-2-score").innerHTML = points += 1;
-	console.log("points plus 1");
+	console.log("p2 points plus 1");
 	}
 }
 
@@ -175,10 +191,8 @@ function whacked() {
 	}
 }
 
-
 function resetWhacked() {
 	document.getElementsByClassName("whacked")[0].classList.remove("whacked");
-	//this.classList.remove("whacked");
 }
 
 
