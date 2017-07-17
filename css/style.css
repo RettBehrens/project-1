@@ -8,12 +8,12 @@
 }
 
 #page-container {
-	height: 100vh;
+	height: 100%;
 	width:100%;
 }
 
 #header-div {
-	height: 15vh;
+	height: 15%;
 	width: 100%;
 	background-color: #9dbae8;
 }
@@ -21,12 +21,14 @@
 h1 {
 	margin: 0 auto;
 	padding-top: 2%;
+	padding-bottom: 2%;
 	font-size: 50px;
 }
 
 #content-div {
-	height: 70vh;
+	height: 80%;
 	width: 100%;
+	padding-bottom: 5%;
 	background-color: #aee8a7;
 }
 
@@ -36,22 +38,23 @@ and centered across the page*/
 
 #description-div {
 	display: inline-block;
-	height: 50vh;
+	height: 60%;
 	width: 30%;
-	margin-top: 10vh;
-	margin-bottom: 10vh;
+	margin-top: 2%;
+	margin-bottom: 2%;
 	margin-left: 2%;
 	background-color: black;
 	color: gold;
 	float: left;
+	border-radius: 10px;
 }
 
 #gameboard-div {
 	display: inline-block;
-	height: 50vh;
+	height: 60%;
 	width: 30%;
-	margin-top: 10vh;
-	margin-bottom: 10vh;
+	margin-top: 2%;
+	margin-bottom: 2%;
 	margin-left: 2%;
 	margin-right: 2%;
 	/*background-image: url(../assets/wooden_planks.jpg);*/
@@ -116,13 +119,14 @@ in this case represented by "x all the y meme"*/
 
 #control-panel-div {
 	display: inline-block;
-	height: 50vh;
+	height: 60%;
 	width: 30%;
-	margin-top: 10vh;
-	margin-bottom: 10vh;
+	margin-top: 2%;
+	margin-bottom: 2%;
 	margin-right: 2%;
 	background-color: black;
 	float: right;
+	border-radius: 10px;
 }
 
 /*still need to make all elements on the control panel rounded with border*/
@@ -181,6 +185,7 @@ button {
 	padding-top: 4%;
 	padding-bottom: 4%;
 	margin-right: : 15%;
+	margin-bottom: 4%;
 	border: 5px solid white;
 	border-radius: 10px;
 }
@@ -193,6 +198,7 @@ button {
 	padding-top: 4%;
 	padding-bottom: 4%;
 	margin-left: 15%;
+	margin-bottom: 4%;
 	border: 5px solid white;
 	border-radius: 10px;
 }
@@ -200,8 +206,6 @@ button {
 .scores {
 	display: block;
 	vertical-align: center;
-	margin-top: 3%
-	border: 5px solid white;
 	border-radius: 10px;
 }
 
@@ -212,7 +216,8 @@ button {
 	width: 20%;
 	padding-top: 2%;
 	padding-bottom: 2%;
-	margin-left: 17%;
+	margin-left: 12%;
+	margin-bottom: 4%;
 	float: left;
 	border: 5px solid white;
 	border-radius: 10px;
@@ -225,14 +230,15 @@ button {
 	width: 20%;
 	padding-top: 2%;
 	padding-bottom: 2%;
-	margin-right: 17%;
+	margin-right: 12%;
+	margin-bottom: 4%;
 	float: right;
 	border: 5px solid white;
 	border-radius: 10px;
 }
 
 #footer-div {
-	height: 15vh;
+	height: 5%;
 	width: 100%;
 	background-color: #e8a7a7;
 }
@@ -240,5 +246,11 @@ button {
 /*remove default link styling*/
 #dev-links-div {
 	margin: 0 auto;
-	padding-top: 3%;
+	padding-top: 3.7%;
+	margin-bottom: 3.7%;
+}
+
+a {
+	text-decoration: none;
+	color: white;
 }
