@@ -81,8 +81,8 @@ and centered across the page*/
 	background-color: black;
 	border-radius: 100px;
 	margin-top: 2px;
-	margin-left: 5px;
-	margin-right: 5px;
+	margin-left: 2px;
+	margin-right: 2px;
 }
 
 /*.mole is the live and clickable mole,
@@ -97,8 +97,8 @@ in this case represented by the JS badge*/
 	background-repeat: no-repeat;
 	border-radius: 100px;
 	margin-top: 2px;
-	margin-left: 5px;
-	margin-right: 5px;
+	margin-left: 2px;
+	margin-right: 2px;
 }
 
 /*.whacked is the image displayed when a mole is successfully clicked,
@@ -113,8 +113,8 @@ in this case represented by "x all the y meme"*/
 	background-repeat: no-repeat;
 	border-radius: 100px;
 	margin-top: 2px;
-	margin-left: 5px;
-	margin-right: 5px;
+	margin-left: 2px;
+	margin-right: 2px;
 }
 
 #control-panel-div {
