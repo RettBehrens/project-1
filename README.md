@@ -36,7 +36,7 @@ Whack-a-Mole Screenshot
 <img src="assets/whack-a-mole-screenshot.jpeg">
 
 Play Whack-a-Mole
-**[HERE]("https://rettbehrens.github.io/project-1/")**
+**[HERE](https://rettbehrens.github.io/project-1/)**
 
 
 ### Overview
