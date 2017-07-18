@@ -1,0 +1,652 @@
+/*These styles don't change, regardless of device*/
+* {
+	box-sizing: border-box;
+	text-align: center;
+    /*gives the text on the page a cool arcade-like font*/
+	font-family: 'Press Start 2P', cursive;
+}
+
+.page-container {
+	height: 100%;
+	width:100%;
+}
+
+.header-div {
+	height: 15%;
+	width: 100%;
+	background-color: #9dbae8;
+}
+
+h1 {
+    margin: 0 auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 90%;
+}
+
+/*.content-div {
+	height: 80%;
+	width: 100%;
+	padding-bottom: 5%;
+	background-color: #aee8a7;
+}*/
+
+h2 {
+    margin: 0 auto;
+    padding-top: 2%;
+}
+
+p {
+    margin: 0 auto;
+    padding-top: 2%;
+}
+
+#p2 {
+    padding-bottom: 2%;
+}
+
+#play {
+    background-color: green;
+    color: white;
+}
+
+#reset {
+    background-color: red;
+    color: white;
+}
+
+
+/* For mobile phones: */
+.content-div {
+    height: 85%;
+    width: 100%;
+    background-color: #aee8a7;
+}
+
+.description-div {
+	display: none;
+	/*height: 20%;
+	width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+	background-color: black;
+	color: gold;
+    border-radius: 10%;*/
+}
+
+.gameboard-div {
+    display: block;
+    height: 60%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.ggClass {
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    max-width: 380px;
+}
+
+/*.mh is the standby or empty mole hole*/
+.mh {
+    display: inline-block;
+    margin: 0 auto;
+    height: 96px;
+    width: 96px;
+    background-color: black;
+    border-radius: 25%;
+}
+
+/*.mole is the live and clickable mole,
+in this case represented by the JS badge*/
+.mole {
+    display: inline-block;
+    margin: 0 auto;
+    height: 96px;
+    width: 96px;
+    background-image: url(../assets/small-js-badge.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 25%;
+}
+
+/*.whacked is the image displayed when a mole is successfully clicked,
+in this case represented by "x all the y meme"*/
+.whacked {
+    display: inline-block;
+    margin: 0 auto;
+    height: 96px;
+    width: 96px;
+    background-image: url(../assets/x-all-the-y.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 25%;
+}
+
+.control-panel-div {
+    display: block;
+    height: 40%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: black;
+    border-radius: 10%;
+}
+
+button {
+    font-family: 'Press Start 2P', cursive;
+    background-color: grey;
+    border: 2px solid white;
+    border-radius: 10%;
+    width: 40%;
+    margin: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+#timer {
+    background-color: black;
+    color: gold;
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: 2px solid white;
+    border-radius: 10%;
+}
+
+#declaration {
+    background-color: black;
+    color: gold;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: 2px solid white;
+    border-radius: 10%;
+}
+
+#player1 {
+    display: none;
+    /*display: inline-block;
+    width: 40%;
+    background-color: black;
+    color: gold;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-right: : 2%;
+    margin-bottom: 2%;
+    border: 2px solid white;
+    border-radius: 10%;*/
+}
+
+#player2 {
+    display: none;
+    /*display: inline-block;
+    width: 40%;
+    background-color: black;
+    color: gold;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    border: 2px solid white;
+    border-radius: 10%;*/
+}
+
+#p-1-score {
+    display: inline-block;
+    background-color: black;
+    color: gold;
+    width: 20%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: 12%;
+    margin-bottom: 1%;
+    float: left;
+    border: 2px solid white;
+    border-radius: 10%;
+}
+
+#p-2-score {
+    display: inline-block;
+    background-color: black;
+    color: gold;
+    width: 20%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-right: 12%;
+    margin-bottom: 1%;
+    float: right;
+    border: 2px solid white;
+    border-radius: 10%;
+}
+
+footer {
+    display: none;
+}
+
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .content-div {
+        height: 85%;
+        width: 100%;
+        background-color: #aee8a7;
+    }
+
+    .description-div {
+        display: block;
+        height: 20%;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        background-color: black;
+        color: gold;
+        border-radius: 10%;
+    }
+
+    .gameboard-div {
+        display: block;
+        height: 60%;
+        width: 40%;
+        margin: 0 auto;
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+
+    .ggClass {
+        display: block;
+        margin: 0 auto;
+        height: 100%;
+        width: 100%;
+        min-width: 290px;
+    }
+
+    /*.mh is the standby or empty mole hole*/
+    .mh {
+        display: inline-block;
+        margin: 0 auto;
+        height: 96px;
+        width: 96px;
+        background-color: black;
+        border-radius: 25%;
+    }
+
+    /*.mole is the live and clickable mole,
+    in this case represented by the JS badge*/
+    .mole {
+        display: inline-block;
+        margin: 0 auto;
+        height: 96px;
+        width: 96px;
+        background-image: url(../assets/small-js-badge.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        border-radius: 25%;
+    }
+
+    /*.whacked is the image displayed when a mole is successfully clicked,
+    in this case represented by "x all the y meme"*/
+    .whacked {
+        display: inline-block;
+        margin: 0 auto;
+        height: 96px;
+        width: 96px;
+        background-image: url(../assets/x-all-the-y.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        border-radius: 25%;
+    }
+
+    .control-panel-div {
+        display: block;
+        height: 20%;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        background-color: black;
+        border-radius: 10%;
+    }
+
+    button {
+        font-family: 'Press Start 2P', cursive;
+        background-color: grey;
+        border: 2px solid white;
+        border-radius: 10%;
+        width: 40%;
+        margin: 1%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+
+    #timer {
+        background-color: black;
+        color: gold;
+        width: 30%;
+        margin: 0 auto;
+        margin-bottom: 1%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        border: 2px solid white;
+        border-radius: 10%;
+    }
+
+    #declaration {
+        background-color: black;
+        color: gold;
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 1%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        border: 2px solid white;
+        border-radius: 10%;
+    }
+
+    #player1 {
+        display: none;
+        /*display: inline-block;
+        width: 40%;
+        background-color: black;
+        color: gold;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin-right: : 2%;
+        margin-bottom: 2%;
+        border: 2px solid white;
+        border-radius: 10%;*/
+    }
+
+    #player2 {
+        display: none;
+        /*display: inline-block;
+        width: 40%;
+        background-color: black;
+        color: gold;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin-left: 2%;
+        margin-bottom: 2%;
+        border: 2px solid white;
+        border-radius: 10%;*/
+    }
+
+    #p-1-score {
+        display: inline-block;
+        background-color: black;
+        color: gold;
+        width: 20%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        margin-left: 12%;
+        margin-bottom: 1%;
+        float: left;
+        border: 2px solid white;
+        border-radius: 10%;
+    }
+
+    #p-2-score {
+        display: inline-block;
+        background-color: black;
+        color: gold;
+        width: 20%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        margin-right: 12%;
+        margin-bottom: 1%;
+        float: right;
+        border: 2px solid white;
+        border-radius: 10%;
+    }
+
+    footer {
+        display: none;
+    }
+
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .header-div {
+        height: 15%;
+        width: 100%;
+        background-color: #9dbae8;
+    }
+
+    h1 {
+        margin: 0 auto;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        font-size: 50px;
+    }
+
+    .content-div {
+        height: 80%;
+        width: 100%;
+        padding-bottom: 5%;
+        background-color: #aee8a7;
+    }
+
+    /*the three divs within the content div 
+    should display inline-block with even spacing 
+    and centered across the page*/
+
+    .description-div {
+        display: inline-block;
+        height: 60%;
+        width: 25%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        margin-left: 2%;
+        background-color: black;
+        color: gold;
+        float: left;
+        border-radius: 10px;
+    }
+
+    .gameboard-div {
+        display: inline-block;
+        height: 60%;
+        width: 30%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        margin-left: 2%;
+        margin-right: 2%;
+        /*background-image: url(../assets/wooden_planks.jpg);*/
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .ggClass {
+        display: block;
+        margin: 0 auto;
+        height: 100%;
+        width: 100%;
+        min-width: 328px;
+        /*background-image: url(../assets/wooden_planks.jpg);*/
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    /*.mh is the standby or empty mole hole*/
+    .mh {
+        display: inline-block;
+        margin: 0 auto;
+        height: 105px;
+        width: 105px;
+        background-color: black;
+        border-radius: 100px;
+        margin-top: 2px;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+
+    /*.mole is the live and clickable mole,
+    in this case represented by the JS badge*/
+    .mole {
+        display: inline-block;
+        margin: 0 auto;
+        height: 105px;
+        width: 105px;
+        background-image: url(../assets/small-js-badge.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        border-radius: 100px;
+        margin-top: 2px;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+
+    /*.whacked is the image displayed when a mole is successfully clicked,
+    in this case represented by "x all the y meme"*/
+    .whacked {
+        display: inline-block;
+        margin: 0 auto;
+        height: 105px;
+        width: 105px;
+        background-image: url(../assets/x-all-the-y.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        border-radius: 100px;
+        margin-top: 2px;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+
+    .control-panel-div {
+        display: inline-block;
+        height: 60%;
+        width: 25%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        margin-right: 2%;
+        background-color: black;
+        float: right;
+        border-radius: 10px;
+    }
+
+    /*still need to make all elements on the control panel rounded with border*/
+
+    /*if time allows, make "play" green and "reset" red*/
+    button {
+        font-family: 'Press Start 2P', cursive;
+        background-color: grey;
+        border: 5px solid white;
+        border-radius: 10px;
+        width: 40%;
+        margin: 4%;
+        padding-top: 4%;
+        padding-bottom: 4%;
+    }
+
+    #play {
+        background-color: green;
+        color: white;
+    }
+
+    #reset {
+        background-color: red;
+        color: white;
+    }
+
+    #timer {
+        background-color: black;
+        color: gold;
+        width: 30%;
+        margin: 0 auto;
+        margin-bottom: 4%;
+        padding-top: 4%;
+        padding-bottom: 4%;
+        border: 5px solid white;
+        border-radius: 10px;
+    }
+
+    #declaration {
+        background-color: black;
+        color: gold;
+        width: 60%;
+        margin: 0 auto;
+        margin-bottom: 4%;
+        padding-top: 4%;
+        padding-bottom: 4%;
+        border: 5px solid white;
+        border-radius: 10px;
+    }
+
+    #player1 {
+        display: inline-block;
+        width: 30%;
+        background-color: black;
+        color: gold;
+        padding-top: 4%;
+        padding-bottom: 4%;
+        margin-right: : 15%;
+        margin-bottom: 4%;
+        border: 5px solid white;
+        border-radius: 10px;
+    }
+
+    #player2 {
+        display: inline-block;
+        width: 30%;
+        background-color: black;
+        color: gold;
+        padding-top: 4%;
+        padding-bottom: 4%;
+        margin-left: 15%;
+        margin-bottom: 4%;
+        border: 5px solid white;
+        border-radius: 10px;
+    }
+
+    #p-1-score {
+        display: inline-block;
+        background-color: black;
+        color: gold;
+        width: 20%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin-left: 12%;
+        margin-bottom: 4%;
+        float: left;
+        border: 5px solid white;
+        border-radius: 10px;
+    }
+
+    #p-2-score {
+        display: inline-block;
+        background-color: black;
+        color: gold;
+        width: 20%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin-right: 12%;
+        margin-bottom: 4%;
+        float: right;
+        border: 5px solid white;
+        border-radius: 10px;
+    }
+
+    #footer-div {
+        height: 5%;
+        width: 100%;
+        background-color: #e8a7a7;
+    }
+
+    #dev-links-div {
+        margin: 0 auto;
+        padding-top: 3.7%;
+        margin-bottom: 3.7%;
+    }
+
+    /*remove default link styling*/
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
