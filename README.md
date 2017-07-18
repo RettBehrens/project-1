@@ -8,7 +8,7 @@ The game page will include the following:
 * a header for the game title
 * a footer for developer contact info
 * a description of the game
-* a gameboard consisting of 8 "mole holes"
+* a gameboard consisting of 9 "mole holes"
 * a score tracker that displays the scores for player 1 and 2
 * a game timer that runs down to 00:00
 * a countdown to start
@@ -31,6 +31,12 @@ Trello link:
 
 Whack-a-Mole Wireframe
 <img src="assets/whack-a-mole-wireframe.jpeg">
+
+Whack-a-Mole Screenshot
+<img src="assets/whack-a-mole-screenshot.jpeg">
+
+Play Whack-a-Mole
+**[HERE](https://rettbehrens.github.io/project-1/)**
 
 
 ### Overview
