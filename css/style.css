@@ -243,13 +243,13 @@ button {
 	background-color: #e8a7a7;
 }
 
-/*remove default link styling*/
 #dev-links-div {
 	margin: 0 auto;
 	padding-top: 3.7%;
 	margin-bottom: 3.7%;
 }
 
+/*remove default link styling*/
 a {
 	text-decoration: none;
 	color: white;

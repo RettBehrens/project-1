@@ -139,6 +139,8 @@ function startGameTimer () {
 				document.getElementById("declaration").innerHTML = "Player 2 Turn";
 			} else if (player === player2) {
 				//if player 1 and 2 have gone, announce winner
+				player = player1;
+				points = 0;
 				announceWinner();
 			}
 	    }
@@ -220,6 +222,14 @@ function announceWinner() {
 	} else if (document.getElementById("p-1-score").innerHTML === document.getElementById("p-2-score").innerHTML) {
 		document.getElementById("declaration").innerHTML = "It's A Tie!";
 	}
+	setTimeout(resetPlayer1Turn, 1000);
+}
+
+function resetPlayer1Turn() {
+	document.getElementById("p-1-score").innerHTML = 0;
+	document.getElementById("p-2-score").innerHTML = 0;
+	document.getElementById("timer").innerHTML = "TIMER";
+	document.getElementById("declaration").innerHTML = "Player 1 Turn";
 }
 
 

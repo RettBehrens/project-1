@@ -2,52 +2,52 @@
 <html>
 <head>
 	<title>WHACK-A-MOLE</title>
+	<!-- set viewport width to device width -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- links to css normalize, to remove browser default styling -->
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<!-- links to css style, for specific element styling -->
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style2.css">
 	<!-- links to google font "Press Start 2P" for arcade font styling -->
 	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 <body>
-	<div id="page-container">
+	<div class="page-container">
 		<!-- header with game title -->
-		<div id="header-div">	
+		<div class="header-div">	
 			<header>
 				<h1>WHACK-A-MOLE</h1>
 			</header>
 		</div>
 		<!-- main content div, containing 3 divs: description, game, and control panel -->
-		<div id="content-div">
-			<div id="description-div">
+		<div class="content-div">
+			<div class="description-div">
 				<h2>The Game</h2>
-				<p>You've got 10 seconds to whack as many moles as you can.</p>
-				<p>Whack the most moles and you're the winner!</p>
+				<p id="p1">You've got 10 seconds to whack as many moles as you can.</p>
+				<p id="p2">Whack the most moles and you're the winner!</p>
 			</div>
 			<!-- where the JS magic happens -->
-			<div id="gameboard-div"></div>
+			<div id="gameboard-div" class="gameboard-div"></div>
 			<!-- for game stats -->
-			<div id="control-panel-div">
+			<div class="control-panel-div">
 				<button id="play">PLAY!</button>
 				<button id="reset">RESET</button>
 				<div id="timer">TIMER</div>
 				<div id="declaration">Player 1 Turn</div>
-				<div id="player1">Player 1</div>
-				<div id="player2">Player 2</div>
-				<div class="scores">
-					<div id="p-1-score">0</div>
-					<div id="p-2-score">0</div>
-				</div>
+				<div id="player1">#1</div>
+				<div id="player2">#2</div>
+				<div id="p-1-score">0</div>
+				<div id="p-2-score">0</div>
 			</div>
 		</div>
 		<!-- footer with dev links -->
 		<div id="footer-div">
 			<footer>
 				<div id="dev-links-div">
-					<a href="#">LinkedIn</a>
-					<a href="#">Twitter</a>
-					<a href="#">GitHub</a>
-					<a href="#">Portfolio</a>
+					<a href="#">#</a>
+					<a href="#">#</a>
+					<a href="#">#</a>
+					<a href="#">#</a>
 				</div>
 			</footer>
 		</div>	
