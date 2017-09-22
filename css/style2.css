@@ -11,7 +11,7 @@
     color: gold;
 }
 
-.container-fluid {
+body {
     background-image: url("../assets/hodgepodge.png");
     background-repeat: repeat;
 }
