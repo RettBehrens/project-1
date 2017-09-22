@@ -18,11 +18,11 @@ function makeReady() {
 		setTimeout(enablePlay, 14000);
 		ready();
 	};
-	console.log("reset ready!");
-	document.getElementById("reset").onclick = function() {
-		wipeGameTimer();
-		wipeGameBoard();
-	};
+	// console.log("reset ready!");
+	// document.getElementById("reset").onclick = function() {
+	// 	wipeGameTimer();
+	// 	wipeGameBoard();
+	// };
 	makeGameboard();
 }
 
